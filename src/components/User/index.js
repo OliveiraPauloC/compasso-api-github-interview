@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import api from '../../services/api'
-
-import Starred from '../../components/Starred'
-import Repos from '../../components/Repos'
 
 const User = () => {
     const [user, setUser] = useState('')
