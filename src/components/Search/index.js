@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Container } from './styles'
 
-function Search() {
+const Search = () => {
+    const [search, setSearch] = useState('')
+
     return (
-        <div>
-            <input type='search' placeholder='Buscar' />
-        </div>
+        <Container>
+                <input
+                    placeholder='Buscar Usuário'
+                    onChange={event => setSearch(event.target.value)}
+                />
+                <a href={search.length === '' ? undefined : `/${search}`}>
+                    <button disabled={search.length === ''}>Buscar</button>
+                </a>
+        </Container>
     )
 }
 

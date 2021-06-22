@@ -1,11 +1,17 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import Router from './routes/Router'
+import Routes from './routes'
+
+import Header from './components/Header'
+
+import GlobalStyle from './styles/global'
 
 function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <Header />
+      <Routes />
+      <GlobalStyle />
     </BrowserRouter>
   )
 }

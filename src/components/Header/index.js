@@ -1,8 +1,14 @@
-import React from 'react' 
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Container } from './styles'
 
-function Header() {
+const Header = () => {
     return (
-        <div>Header</div>
+        <Container>
+                <Link to='.'>
+                    <h2>GitHub Busca</h2>
+                </Link>
+        </Container>
     )
 }
 
