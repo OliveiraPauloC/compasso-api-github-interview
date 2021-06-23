@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, RepoUser } from './styles'
+import { Container, RepoUser, Language } from './styles'
 
 const StarredItem = ({htmlUrl, ownerUsername, name, description, forksCount, stargazersCount, language}) => {
     return (
@@ -14,9 +14,9 @@ const StarredItem = ({htmlUrl, ownerUsername, name, description, forksCount, sta
                     </div>
                 </RepoUser>
 
-                <div>
+                <Language>
                     {language}
-                </div>
+                </Language>
         </Container>
     )
 }

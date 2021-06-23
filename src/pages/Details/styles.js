@@ -17,6 +17,16 @@ export const Container = styled.div`
     }
 `
 
+export const Loading = styled.div`
+    text-align: center;
+    padding: 50px 0;
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+`
+
 export const Erro = styled.div`
     text-align: center;
     padding: 50px 0;

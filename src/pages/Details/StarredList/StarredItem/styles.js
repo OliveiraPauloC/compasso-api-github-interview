@@ -30,6 +30,10 @@ export const Container = styled.div`
     @media (min-width: 738px) {
         flex-direction: row;
     }
+
+    @media (max-width: 738px) {
+        margin: 0 30px;
+    }
 `
 
 export const RepoUser = styled.div`
@@ -37,8 +41,18 @@ export const RepoUser = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     font-weight: 300;
+    margin-bottom: 15px;
 
     span {
         font-weight: 500;
     }
+
+    div {
+        margin-top: 5px;
+    }
+`
+
+export const Language = styled.div`
+    color: #111;
+    text-transform: uppercase;
 `

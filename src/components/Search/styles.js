@@ -9,6 +9,10 @@ export const Container = styled.div`
     width: 60vw;
     padding-top: 5rem;
 
+    @media (max-width: 738px) {
+        width: 100%;
+    }
+
     input {
         flex: 1;
         border: none;

@@ -5,7 +5,9 @@ import api from '../../services/api'
 import UserInfo from './UserInfo'
 import RepoList from './RepoList'
 import StarredList from './StarredList'
-import { Container, Erro } from './styles'
+
+import LoadingImg from '../../assets/loading.gif'
+import { Container, Loading, Erro } from './styles'
 
 const Details = () => {
     const {username} = useParams()
@@ -46,6 +48,8 @@ const Details = () => {
                     <button>Voltar</button>
                 </a>
             </div>
+
+            {loading && <Loading><img src={LoadingImg} alt='Carregando'/></Loading>}
 
             {!loading && error && <Erro><h2>Nenhum Usuário encontrado</h2></Erro>}
 
