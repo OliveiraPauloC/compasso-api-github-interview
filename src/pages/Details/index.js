@@ -16,21 +16,22 @@ const Details = () => {
     const [error, setError] = useState(false)
     const [showRepo, setShowRepo] = useState(true)
 
-    useEffect(async () => {
-        try {
-          setLoading(true)
-    
-          const { data } = await api.get(`/users/${username}`)
-    
-          setUser(data)
-        } catch (err) {
-          if (err.response.status === 404) {
-            setError(true)
-            return
-          }
-        } finally {
-          setLoading(false)
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                setLoading(true)
+                const { data } = await api.get(`/users/${username}`)
+                setUser(data)
+            } catch (err) {
+                if (err.response.status === 404) {
+                    setError(true)
+                    return
+                }
+            } finally {
+                setLoading(false)
+            }
         }
+        fetchData()
     },[])
 
     const handleRepoClick = useCallback(() => {
@@ -51,7 +52,7 @@ const Details = () => {
 
             {loading && <Loading><img src={LoadingImg} alt='Carregando'/></Loading>}
 
-            {!loading && error && <Erro><h2>Nenhum Usuário encontrado</h2></Erro>}
+            {!loading && error && <Erro><h2>Nenhum usuário encontrado</h2></Erro>}
 
             {!loading && !error && JSON.stringify(user) !== {} && (
                 <div>
